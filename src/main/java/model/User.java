@@ -1,10 +1,10 @@
-package web.model;
+package model;
 
-
+import org.springframework.stereotype.Controller;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name="users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,15 +59,5 @@ public class User {
 
     public void setAge(byte age) {
         this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", fullName='" + fullName + '\'' +
-                ", country='" + country + '\'' +
-                ", age=" + age +
-                '}';
     }
 }
