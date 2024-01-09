@@ -1,9 +1,11 @@
-package service;
+package dao;
+
+
 import model.User;
 
 import java.util.List;
 
-public interface UsersService {
+public interface UsersDao {
     public List<User> findAll();
 
     public User show(int id);

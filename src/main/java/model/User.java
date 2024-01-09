@@ -1,63 +1,61 @@
 package model;
 
-import org.springframework.stereotype.Controller;
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
-
-    @Column(name = "fullName")
-    private String fullName;
-
-    @Column(name = "country")
-    private String country;
-
-    @Column(name = "age")
-    private byte age;
+    private int id;
+    @Column
+    private String name;
+    @Column
+    private String surname;
+    @Column
+    private int age;
 
     public User() {
+
     }
 
-    public User(String fullName, String country, byte age) {
-        this.fullName = fullName;
-        this.country = country;
+    public User(String name, String surname, int age) {
+        this.name = name;
+        this.surname = surname;
         this.age = age;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCountry() {
-        return country;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public byte getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(byte age) {
+    public void setAge(int age) {
         this.age = age;
     }
+
+
 }
