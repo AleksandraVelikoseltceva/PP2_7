@@ -67,11 +67,11 @@
 <body>
 <form th:method="POST" th:action="@{/}" th:object="${user}">
     <div id="wrapper">
-        <label for="fullName">Enter full name: </label>
-        <input type="text" th:field="*{fullName}" id="fullName"/>
+        <label for="name">Enter full name: </label>
+        <input type="text" th:field="*{name}" id="name"/>
         <br/>
-        <label for="country">Enter country: </label>
-        <input type="text" th:field="*{country}" id="country"/>
+        <label for="surname">Enter country: </label>
+        <input type="text" th:field="*{surname}" id="surname"/>
         <br/>
         <label for="age">Enter age: </label>
         <input type="text" th:field="*{age}" id="age"/>

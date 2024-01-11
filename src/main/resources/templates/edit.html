@@ -67,11 +67,11 @@
 <body>
 <form th:method="PATCH" th:action="@{/{id}(id=${user.getId()})}" th:object="${user}">
 
-    <label for="fullName">Edit full name: </label>
-    <input type="text" th:field="*{fullName}" id="fullName"/>
+    <label for="name">Edit full name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
     <br/>
-    <label for="country">Edit country: </label>
-    <input type="text" th:field="*{country}" id="country"/>
+    <label for="surname">Edit country: </label>
+    <input type="text" th:field="*{surname}" id="surname"/>
     <br/>
     <label for="age">Edit age: </label>
     <input type="text" th:field="*{age}" id="age"/>

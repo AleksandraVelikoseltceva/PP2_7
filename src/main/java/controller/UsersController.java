@@ -2,7 +2,7 @@ package controller;
 
 
 import model.User;
-import service.UsersService;
+import service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/users")
 public class UsersController {
-    private final UsersService usersService;
+    private final UserService userService;
 
-    public UsersController(UsersService usersService) {
-        this.usersService = usersService;
+    public UsersController(UserService userService) {
+        this.userService = userService;
     }
 
 
     @GetMapping()
     public String index(Model model) {
-        model.addAttribute("users", usersService.findAll());
+        model.addAttribute("users", userService.findAll());
         return "index";
     }
 
     @GetMapping("/")
     public String show(@RequestParam(value = "id") int id, Model model) {
-        model.addAttribute("user", usersService.show(id));
+        model.addAttribute("user", userService.show(id));
         return "show";
     }
 
@@ -36,25 +36,25 @@ public class UsersController {
 
     @PostMapping()
     public String create(@ModelAttribute User user) {
-        usersService.save(user);
+        userService.save(user);
         return "redirect:/users";
     }
 
     @GetMapping("/edit/")
     public String edit(Model model, @RequestParam("id") int id) {
-        model.addAttribute("user", usersService.show(id));
+        model.addAttribute("user", userService.show(id));
         return "edit";
     }
 
     @PatchMapping("/")
     public String update(@ModelAttribute User user, @RequestParam("id") int id) {
-        usersService.update(id, user);
+        userService.update(id, user);
         return "redirect:/users";
     }
 
     @DeleteMapping("/")
     public String delete(@RequestParam("id") int id) {
-        usersService.delete(id);
+        userService.delete(id);
         return "redirect:/users";
     }
 

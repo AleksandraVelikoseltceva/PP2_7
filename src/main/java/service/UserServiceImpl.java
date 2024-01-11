@@ -1,7 +1,7 @@
 package service;
 
 
-import dao.UsersDao;
+import dao.UserDao;
 import model.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,34 +10,34 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
-public class UsersServiceImpl implements UsersService {
-    private final UsersDao usersDao;
+public class UserServiceImpl implements UserService {
+    private final UserDao userDao;
 
-    public UsersServiceImpl(UsersDao usersDao) {
-        this.usersDao = usersDao;
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
     }
 
     public List<User> findAll() {
-        return usersDao.findAll();
+        return userDao.findAll();
     }
 
     @Transactional
     public void save(User user) {
-        usersDao.save(user);
+        userDao.save(user);
     }
 
     @Transactional
     public void update(int id, User updatedUser) {
-        usersDao.update(id, updatedUser);
+        userDao.update(id, updatedUser);
     }
 
     @Transactional
     public void delete(int id) {
-        usersDao.delete(id);
+        userDao.delete(id);
     }
 
     public User show(int id) {
-        return usersDao.show(id);
+        return userDao.show(id);
     }
 
 }

@@ -19,7 +19,7 @@
 <body>
 <h1>All Users List</h1>
 <div th:each="user : ${users}">
-    <a th:href="@{/{id}(id=${user.getId()})}" th:text="${user.getFullName() + ', ' + user.getCountry() + ', ' + user.getAge()}">user</a>
+    <a th:href="@{/{id}(id=${user.getId()})}" th:text="${user.getName() + ', ' + user.getSurname() + ', ' + user.getAge()}">user</a>
     <br>
 </div>
 
