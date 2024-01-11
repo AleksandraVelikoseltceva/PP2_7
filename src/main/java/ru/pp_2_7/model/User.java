@@ -1,4 +1,4 @@
-package model;
+package ru.pp_2_7.model;
 
 
 import javax.persistence.*;

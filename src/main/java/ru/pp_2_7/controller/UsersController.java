@@ -1,8 +1,8 @@
-package controller;
+package ru.pp_2_7.controller;
 
 
-import model.User;
-import service.UserService;
+import ru.pp_2_7.model.User;
+import ru.pp_2_7.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +24,7 @@ public class UsersController {
     }
 
     @GetMapping("/")
-    public String show(@RequestParam(value = "id") int id, Model model) {
+    public String show(@RequestParam(value = "id") int id, Model model) {//todo: codeStyle ..именование
         model.addAttribute("user", userService.show(id));
         return "show";
     }
@@ -53,9 +53,8 @@ public class UsersController {
     }
 
     @DeleteMapping("/")
-    public String delete(@RequestParam("id") int id) {
+    public String delete(@RequestParam("id") int id) {//todo: отказываемся от примитивов
         userService.delete(id);
         return "redirect:/users";
     }
-
 }

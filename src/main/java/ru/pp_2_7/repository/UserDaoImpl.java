@@ -1,6 +1,6 @@
-package dao;
+package ru.pp_2_7.repository;
 
-import model.User;
+import ru.pp_2_7.model.User;
 import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -8,6 +8,7 @@ import java.util.List;
 
 @Repository
 public class UserDaoImpl implements UserDao {
+
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -24,7 +25,6 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void save(User user) {
         entityManager.persist(user);
-
     }
 
     @Override
@@ -36,5 +36,4 @@ public class UserDaoImpl implements UserDao {
     public void delete(int id) {
         entityManager.remove(show(id));
     }
-
 }

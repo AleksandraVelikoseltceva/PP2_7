@@ -1,8 +1,8 @@
-package service;
+package ru.pp_2_7.service;
 
 
-import dao.UserDao;
-import model.User;
+import ru.pp_2_7.repository.UserDao;
+import ru.pp_2_7.model.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
